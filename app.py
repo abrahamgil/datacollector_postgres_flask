@@ -8,6 +8,10 @@ def index():
 
 @app.route("/success", methods=['POST'])
 def success():
+    if request.method=='POST':
+        email=request.form["email_name"]
+        height=request.form['height_name']
+        print(email, height)
     return render_template("success.html")
 
 if __name__ == '__main__':
